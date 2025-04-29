@@ -97,7 +97,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-2">
       {/* Navigation */}
       <nav className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-40">
           <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <Image src="/pushstack.png" className="mx-auto" alt="Pushes" width={450} height={200} />
-            <h1 className="mt-12 text-4xl sm:text-7xl font-light  bg-gradient-to-br from-primary to-gray-200 bg-clip-text text-transparent">
+            <h1 className="mt-12 text-5xl sm:text-7xl font-light  bg-gradient-to-br from-primary to-gray-200 bg-clip-text text-transparent">
               Push for Developers
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
