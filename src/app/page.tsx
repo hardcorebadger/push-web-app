@@ -116,7 +116,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
-          <div className="text-center">
+          <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <Image src="/pushstack.png" className="mx-auto" alt="Pushes" width={450} height={200} />
             <h1 className="mt-12 text-4xl sm:text-7xl font-light  bg-gradient-to-br from-primary to-gray-200 bg-clip-text text-transparent">
               Push for Developers
@@ -127,33 +127,26 @@ export default function Home() {
             <Waitlist />
             <p className="mt-4 text-sm text-zinc-500">Get early access when we launch.</p>
           </div>
-          
         </div>
       </div>
 
       {/* Platform Logos Bar */}
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center gap-8">
-            <div className="flex items-center justify-center gap-12">
-              <svg viewBox="0 0 24 24" className="h-8 w-8 text-zinc-400" fill="currentColor">
-                <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.003h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.366zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z" />
-              </svg>
-              <svg viewBox="0 0 24 24" className="h-8 w-8 text-zinc-400" fill="currentColor">
-                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.27 2.33-1.83 4.11-3.74 4.25" />
-              </svg>
-              {/* <svg viewBox="0 0 24 24" className="h-8 w-8 text-zinc-400" fill="currentColor">
-                <path d="M17.523 15.34c.444-.078.832-.215 1.164-.409a2.867 2.867 0 0 0 1.305-1.657c.097-.365.122-.774.075-1.226-.058-.512-.196-.993-.412-1.444a4.523 4.523 0 0 0-.985-1.305 4.34 4.34 0 0 0-1.477-.881 4.89 4.89 0 0 0-1.788-.321c-.34 0-.67.033-.985.1-.316.067-.611.17-.887.31-.275.14-.531.316-.768.527-.236.211-.45.46-.642.744l-3.283-1.674a8.792 8.792 0 0 0-.985-.41 2.611 2.611 0 0 0-.887-.155c-.314 0-.609.052-.887.155-.275.104-.523.267-.741.49L2.91 6.518l5.07 2.587c.236.12.432.267.589.442.157.176.275.376.353.6.079.226.118.47.118.735 0 .264-.04.509-.118.734-.079.226-.196.426-.353.601a1.64 1.64 0 0 1-.589.443L2.91 15.246l2.44-2.365c.218-.211.466-.367.741-.47.278-.102.573-.154.887-.154.314 0 .612.052.887.155.275.104.65.246.985.427l3.283-1.674c.193.284.407.532.642.744.237.21.493.386.768.526.276.14.571.244.887.31.315.068.645.101.985.101.615 0 1.203-.106 1.764-.32.562-.212 1.057-.513 1.477-.9.444-.387.798-.85 1.01-1.388.21-.537.327-1.127.353-1.77a5.139 5.139 0 0 0-.266-1.789 4.482 4.482 0 0 0-.886-1.46 4.077 4.077 0 0 0-1.37-1.004 4.013 4.013 0 0 0-1.719-.366c-.34 0-.67.033-.985.1-.315.068-.61.17-.886.31-.276.141-.532.316-.769.527-.236.211-.45.46-.642.744L7.481 3.953a8.792 8.792 0 0 0-.985-.41 2.611 2.611 0 0 0-.887-.155c-.314 0-.609.052-.887.155-.275.104-.523.267-.741.49L2.91 6.518l5.07 2.587c.236.12.432.267.589.442.157.176.275.376.353.6.079.226.118.47.118.735 0 .264-.04.509-.118.734-.079.226-.196.426-.353.601a1.64 1.64 0 0 1-.589.443L2.91 15.246l2.44-2.365c.218-.211.466-.367.741-.47.278-.102.573-.154.887-.154.314 0 .612.052.887.155.275.104.65.246.985.427l3.283-1.674c.193.284.407.532.642.744.237.21.493.386.768.526.276.14.571.244.887.31.315.068.645.101.985.101.615 0 1.203-.106 1.764-.32.562-.212 1.057-.513 1.477-.9.444-.387.798-.85 1.01-1.388.21-.537.327-1.127.353-1.77a5.139 5.139 0 0 0-.266-1.789 4.482 4.482 0 0 0-.886-1.46 4.077 4.077 0 0 0-1.37-1.004 4.013 4.013 0 0 0-1.719-.366zm-5.523.66c-.236 0-.458-.045-.667-.134a1.674 1.674 0 0 1-.536-.366 1.674 1.674 0 0 1-.366-.536 1.557 1.557 0 0 1-.134-.667c0-.236.045-.458.134-.667.089-.208.21-.39.366-.536a1.674 1.674 0 0 1 .536-.366c.209-.089.431-.134.667-.134.236 0 .458.045.667.134.208.089.39.21.536.366.145.146.277.328.366.536.089.209.134.431.134.667 0 .236-.045.458-.134.667a1.674 1.674 0 0 1-.366.536 1.674 1.674 0 0 1-.536.366 1.557 1.557 0 0 1-.667.134z"/>
-              </svg> */}
-              <svg width="23" height="13" viewBox="0 0 23 13" className="h-8 w-8 text-zinc-400" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.5 13.0002C0.65 11.2169 1.196 9.5752 2.138 8.0752C3.08 6.5752 4.334 5.38353 5.9 4.5002L4.05 1.3002C3.95 1.1502 3.925 0.991862 3.975 0.825195C4.025 0.658528 4.13333 0.533528 4.3 0.450195C4.43333 0.366862 4.58333 0.350195 4.75 0.400195C4.91667 0.450195 5.05 0.550195 5.15 0.700195L7 3.90019C8.43333 3.30019 9.93333 3.0002 11.5 3.0002C13.0667 3.0002 14.5667 3.30019 16 3.90019L17.85 0.700195C17.95 0.550195 18.0833 0.450195 18.25 0.400195C18.4167 0.350195 18.5667 0.366862 18.7 0.450195C18.8667 0.533528 18.975 0.658528 19.025 0.825195C19.075 0.991862 19.05 1.1502 18.95 1.3002L17.1 4.5002C18.6667 5.38353 19.9207 6.5752 20.862 8.0752C21.8033 9.5752 22.3493 11.2169 22.5 13.0002H0.5ZM6.5 10.2502C6.85 10.2502 7.146 10.1292 7.388 9.8872C7.63 9.6452 7.75067 9.34953 7.75 9.0002C7.74933 8.65086 7.62833 8.35486 7.387 8.1122C7.14567 7.86953 6.85 7.74886 6.5 7.7502C6.15 7.75153 5.854 7.87253 5.612 8.1132C5.37 8.35386 5.24933 8.64953 5.25 9.0002C5.25067 9.35086 5.37167 9.64686 5.613 9.8882C5.85433 10.1295 6.15 10.2502 6.5 10.2502ZM16.5 10.2502C16.85 10.2502 17.146 10.1292 17.388 9.8872C17.63 9.6452 17.7507 9.34953 17.75 9.0002C17.7493 8.65086 17.6283 8.35486 17.387 8.1122C17.1457 7.86953 16.85 7.74886 16.5 7.7502C16.15 7.75153 15.854 7.87253 15.612 8.1132C15.37 8.35386 15.2493 8.64953 15.25 9.0002C15.2507 9.35086 15.3717 9.64686 15.613 9.8882C15.8543 10.1295 16.15 10.2502 16.5 10.2502Z"/>
-</svg>
-
-            </div>
-            <p className="text-lg text-zinc-400 text-center">Push to all platforms in one dead simple API</p>
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
+          <div className="flex items-center justify-center gap-12">
+            <svg viewBox="0 0 24 24" className="h-8 w-8 text-zinc-400" fill="currentColor">
+              <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.003h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.366zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z" />
+            </svg>
+            <svg viewBox="0 0 24 24" className="h-8 w-8 text-zinc-400" fill="currentColor">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.27 2.33-1.83 4.11-3.74 4.25" />
+            </svg>
+            <svg width="23" height="13" viewBox="0 0 23 13" className="h-8 w-8 text-zinc-400" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.5 13.0002C0.65 11.2169 1.196 9.5752 2.138 8.0752C3.08 6.5752 4.334 5.38353 5.9 4.5002L4.05 1.3002C3.95 1.1502 3.925 0.991862 3.975 0.825195C4.025 0.658528 4.13333 0.533528 4.3 0.450195C4.43333 0.366862 4.58333 0.350195 4.75 0.400195C4.91667 0.450195 5.05 0.550195 5.15 0.700195L7 3.90019C8.43333 3.30019 9.93333 3.0002 11.5 3.0002C13.0667 3.0002 14.5667 3.30019 16 3.90019L17.85 0.700195C17.95 0.550195 18.0833 0.450195 18.25 0.400195C18.4167 0.350195 18.5667 0.366862 18.7 0.450195C18.8667 0.533528 18.975 0.658528 19.025 0.825195C19.075 0.991862 19.05 1.1502 18.95 1.3002L17.1 4.5002C18.6667 5.38353 19.9207 6.5752 20.862 8.0752C21.8033 9.5752 22.3493 11.2169 22.5 13.0002H0.5ZM6.5 10.2502C6.85 10.2502 7.146 10.1292 7.388 9.8872C7.63 9.6452 7.75067 9.34953 7.75 9.0002C7.74933 8.65086 7.62833 8.35486 7.387 8.1122C7.14567 7.86953 6.85 7.74886 6.5 7.7502C6.15 7.75153 5.854 7.87253 5.612 8.1132C5.37 8.35386 5.24933 8.64953 5.25 9.0002C5.25067 9.35086 5.37167 9.64686 5.613 9.8882C5.85433 10.1295 6.15 10.2502 6.5 10.2502ZM16.5 10.2502C16.85 10.2502 17.146 10.1292 17.388 9.8872C17.63 9.6452 17.7507 9.34953 17.75 9.0002C17.7493 8.65086 17.6283 8.35486 17.387 8.1122C17.1457 7.86953 16.85 7.74886 16.5 7.7502C16.15 7.75153 15.854 7.87253 15.612 8.1132C15.37 8.35386 15.2493 8.64953 15.25 9.0002C15.2507 9.35086 15.3717 9.64686 15.613 9.8882C15.8543 10.1295 16.15 10.2502 16.5 10.2502Z"/>
+            </svg>
           </div>
+          <p className="text-lg text-zinc-400 text-center">Push to all platforms in one dead simple API</p>
         </div>
-
-      
+      </div>
 
       {/* Integration Section */}
       <IntegrationSection />
@@ -161,7 +154,7 @@ export default function Home() {
       {/* How it Works Section */}
       <section className="py-24 bg-black/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <h2 className="text-5xl font-light">How it works</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Simple integration, powerful delivery
@@ -174,7 +167,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
               {/* Step 1: Frontend */}
-              <div className="relative">
+              <div className="relative animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
                 <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 h-20 w-0.5 bg-gradient-to-b from-primary to-transparent hidden md:block" />
 
                 <div className="bg-black rounded-lg p-6 border border-zinc-800 relative">
@@ -189,7 +182,7 @@ export default function Home() {
               </div>
 
               {/* Step 2: Your Backend */}
-              <div className="relative">
+              <div className="relative animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
                 <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 h-20 w-0.5 bg-gradient-to-b from-primary to-transparent hidden md:block" />
 
                 <div className="bg-black rounded-lg p-6 border border-zinc-800 relative">
@@ -204,7 +197,7 @@ export default function Home() {
               </div>
 
               {/* Step 3: Send Notifications */}
-              <div className="relative">
+              <div className="relative animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-700">
                 <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 h-20 w-0.5 bg-gradient-to-b from-primary to-transparent hidden md:block" />
                 <div className="bg-black rounded-lg p-6 border border-zinc-800 relative">
                   <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
@@ -220,21 +213,21 @@ export default function Home() {
 
             {/* Benefits List */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="flex gap-3">
+              <div className="flex gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-900">
                 <div className="mt-1"><Key className="h-5 w-5 text-primary" /></div>
                 <div>
                   <h4 className="font-medium mb-1">Automatic Token Management</h4>
                   <p className="text-sm text-zinc-400">No need to store or manage device tokens. We handle updates and cleanup.</p>
                 </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000">
                 <div className="mt-1"><Shield className="h-5 w-5 text-primary" /></div>
                 <div>
                   <h4 className="font-medium mb-1">Built-in Security</h4>
                   <p className="text-sm text-zinc-400">Secure token storage and platform-specific encryption handled for you.</p>
                 </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1100">
                 <div className="mt-1"><Activity className="h-5 w-5 text-primary" /></div>
                 <div>
                   <h4 className="font-medium mb-1">Delivery Tracking</h4>
@@ -249,43 +242,43 @@ export default function Home() {
       {/* Deliverability/Trust Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-light mb-16 text-left md:text-center">
+          <h2 className="text-5xl font-light mb-16 text-left md:text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
             Build products,<br />
             <span className="bg-gradient-to-r from-primary to-gray-400 bg-clip-text text-transparent">not infrastructure</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Feature 1 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
               <div className="mb-4"><Code className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">One API for all platforms</h3>
               <p className="text-zinc-400 text-base">Send to iOS, Android, and web with a single API. No need to manage multiple SDKs or platform-specific code.</p>
             </div>
             {/* Feature 2 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
               <div className="mb-4"><Server className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">Managed device tokens</h3>
               <p className="text-zinc-400 text-base">We handle device token management, including storage, updates, and cleanup of invalid tokens.</p>
             </div>
             {/* Feature 3 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-700">
               <div className="mb-4"><Activity className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">Delivery analytics</h3>
               <p className="text-zinc-400 text-base">Track delivery rates, opens, and engagement across all platforms in one dashboard.</p>
             </div>
             {/* Feature 4 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-900">
               <div className="mb-4"><ListChecks className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">Opt-out management</h3>
               <p className="text-zinc-400 text-base">Automatically handle user opt-outs and respect platform-specific unsubscribe requirements.</p>
             </div>
             {/* Feature 5 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000">
               <div className="mb-4"><Database className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">Zero infrastructure</h3>
               <p className="text-zinc-400 text-base">No databases or servers to manage. Just make API calls and we handle the rest.</p>
             </div>
             {/* Feature 6 */}
-            <div>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1100">
               <div className="mb-4"><Zap className="h-6 w-6 text-primary" /></div>
               <h3 className="font-semibold text-lg mb-1">High-performance delivery</h3>
               <p className="text-zinc-400 text-base">Optimized infrastructure for fast, reliable delivery with automatic retries and error handling.</p>
@@ -297,7 +290,7 @@ export default function Home() {
       {/* CTA Section */}
       <div className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <h2 className="text-3xl font-light">Can't wait for Pushable?</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               We're currently in private beta. Join the waitlist to get early access.
