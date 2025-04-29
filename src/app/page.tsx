@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 function Waitlist() {
   const [email, setEmail] = useState('');
@@ -92,7 +93,8 @@ function Waitlist() {
 }
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div className="min-h-screen">
@@ -102,58 +104,58 @@ export default function Home() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <h1 className="text-xl font-bold">Pushable</h1>
-              <div className="hidden md:flex ml-8 items-center space-x-4 text-sm">
-                <Link className="text-muted-foreground hover:text-primary" href="/">Product</Link>
-                <Link className="text-muted-foreground hover:text-primary" href="/">Documentation</Link>
-                <Link className="text-muted-foreground hover:text-primary" href="/">Pricing</Link>
-              </div>
+              {!isMobile && (
+                <div className="ml-8 flex items-center space-x-4 text-sm">
+                  <Link className="text-muted-foreground hover:text-primary" href="/">Product</Link>
+                  <Link className="text-muted-foreground hover:text-primary" href="/">Documentation</Link>
+                  <Link className="text-muted-foreground hover:text-primary" href="/">Pricing</Link>
+                </div>
+              )}
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-4">
-                <Button variant="ghost" size="sm" className="rounded-full">Sign In</Button>
-                <Button className="rounded-full">Get Started</Button>
-              </div>
-              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                  <div className="flex flex-col space-y-4 mt-8">
-                    <Link 
-                      href="/" 
-                      className="text-muted-foreground hover:text-primary text-lg"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Product
-                    </Link>
-                    <Link 
-                      href="/" 
-                      className="text-muted-foreground hover:text-primary text-lg"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Documentation
-                    </Link>
-                    <Link 
-                      href="/" 
-                      className="text-muted-foreground hover:text-primary text-lg"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Pricing
-                    </Link>
-                    <div className="pt-4 border-t">
-                      <Button variant="ghost" className="w-full justify-start text-lg" onClick={() => setIsMobileMenuOpen(false)}>
-                        Sign In
-                      </Button>
-                      <Button className="w-full justify-start text-lg mt-2" onClick={() => setIsMobileMenuOpen(false)}>
-                        Get Started
-                      </Button>
+              {isMobile ? (
+                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon" className="rounded-full">
+                      <Menu className="h-5 w-5" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                    <div className="flex flex-col space-y-4 mt-8">
+                      <Link 
+                        className="text-muted-foreground hover:text-primary text-lg" 
+                        href="/"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Product
+                      </Link>
+                      <Link 
+                        className="text-muted-foreground hover:text-primary text-lg" 
+                        href="/"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Documentation
+                      </Link>
+                      <Link 
+                        className="text-muted-foreground hover:text-primary text-lg" 
+                        href="/"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Pricing
+                      </Link>
+                      <div className="pt-4 border-t">
+                        <Button variant="ghost" size="lg" className="w-full justify-start rounded-lg">Sign In</Button>
+                        <Button size="lg" className="w-full justify-start rounded-lg mt-2">Get Started</Button>
+                      </div>
                     </div>
-                  </div>
-                </SheetContent>
-              </Sheet>
+                  </SheetContent>
+                </Sheet>
+              ) : (
+                <>
+                  <Button variant="ghost" size="sm" className="rounded-full">Sign In</Button>
+                  <Button className="rounded-full">Get Started</Button>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -161,7 +163,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-40">
           <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
             <Image src="/pushstack.png" className="mx-auto" alt="Pushes" width={450} height={200} />
             <h1 className="mt-12 text-4xl sm:text-7xl font-light  bg-gradient-to-br from-primary to-gray-200 bg-clip-text text-transparent">
