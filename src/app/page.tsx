@@ -121,31 +121,33 @@ export default function Home() {
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                    <div className="flex flex-col space-y-4 mt-8">
-                      <Link 
-                        className="text-muted-foreground hover:text-primary text-lg" 
-                        href="/"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Product
-                      </Link>
-                      <Link 
-                        className="text-muted-foreground hover:text-primary text-lg" 
-                        href="/"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Documentation
-                      </Link>
-                      <Link 
-                        className="text-muted-foreground hover:text-primary text-lg" 
-                        href="/"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Pricing
-                      </Link>
-                      <div className="pt-4 border-t">
-                        <Button variant="ghost" size="lg" className="w-full justify-start rounded-lg">Sign In</Button>
-                        <Button size="lg" className="w-full justify-start rounded-lg mt-2">Get Started</Button>
+                    <div className="flex flex-col space-y-6 mt-12 px-6">
+                      <div className="space-y-4">
+                        <Link 
+                          className="text-muted-foreground hover:text-primary text-lg font-medium block py-2" 
+                          href="/"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Product
+                        </Link>
+                        <Link 
+                          className="text-muted-foreground hover:text-primary text-lg font-medium block py-2" 
+                          href="/"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Documentation
+                        </Link>
+                        <Link 
+                          className="text-muted-foreground hover:text-primary text-lg font-medium block py-2" 
+                          href="/"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Pricing
+                        </Link>
+                      </div>
+                      <div className="pt-6 border-t border-zinc-800">
+                        <Button variant="ghost" size="lg" className="w-full justify-start rounded-lg py-6 text-lg">Sign In</Button>
+                        <Button size="lg" className="w-full justify-start rounded-lg mt-3 py-6 text-lg">Get Started</Button>
                       </div>
                     </div>
                   </SheetContent>
@@ -165,7 +167,15 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-40">
           <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <Image src="/pushstack.png" className="mx-auto" alt="Pushes" width={450} height={200} />
+            <Image 
+              src="/pushstack.png" 
+              className="mx-auto" 
+              alt="Pushes" 
+              width={900} 
+              height={400} 
+              quality={100}
+              priority
+            />
             <h1 className="mt-12 text-5xl sm:text-7xl font-light  bg-gradient-to-br from-primary to-gray-200 bg-clip-text text-transparent">
               Push for Developers
             </h1>
