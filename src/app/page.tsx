@@ -3,11 +3,12 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { ArrowRight, Bell, Code, Zap, ShieldCheck, Server, ListChecks, Activity, Key, Database, Shield } from "lucide-react"
+import { ArrowRight, Bell, Code, Zap, ShieldCheck, Server, ListChecks, Activity, Key, Database, Shield, Menu } from "lucide-react"
 import IntegrationSection from "@/components/IntegrationSection"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 function Waitlist() {
   const [email, setEmail] = useState('');
@@ -91,6 +92,8 @@ function Waitlist() {
 }
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -99,15 +102,58 @@ export default function Home() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <h1 className="text-xl font-bold">Pushable</h1>
-              <div className="ml-8 flex items-center space-x-4 text-sm">
+              <div className="hidden md:flex ml-8 items-center space-x-4 text-sm">
                 <Link className="text-muted-foreground hover:text-primary" href="/">Product</Link>
                 <Link className="text-muted-foreground hover:text-primary" href="/">Documentation</Link>
                 <Link className="text-muted-foreground hover:text-primary" href="/">Pricing</Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="rounded-full">Sign In</Button>
-              <Button className="rounded-full">Get Started</Button>
+              <div className="hidden md:flex items-center space-x-4">
+                <Button variant="ghost" size="sm" className="rounded-full">Sign In</Button>
+                <Button className="rounded-full">Get Started</Button>
+              </div>
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-4 mt-8">
+                    <Link 
+                      href="/" 
+                      className="text-muted-foreground hover:text-primary text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Product
+                    </Link>
+                    <Link 
+                      href="/" 
+                      className="text-muted-foreground hover:text-primary text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Documentation
+                    </Link>
+                    <Link 
+                      href="/" 
+                      className="text-muted-foreground hover:text-primary text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Pricing
+                    </Link>
+                    <div className="pt-4 border-t">
+                      <Button variant="ghost" className="w-full justify-start text-lg" onClick={() => setIsMobileMenuOpen(false)}>
+                        Sign In
+                      </Button>
+                      <Button className="w-full justify-start text-lg mt-2" onClick={() => setIsMobileMenuOpen(false)}>
+                        Get Started
+                      </Button>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
